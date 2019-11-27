@@ -1,0 +1,26 @@
+.right-tri {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 0 40px 40px;
+  border-color: white white white black;
+}
+
+.top-tri {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: black white white white;
+  border-width: 40px 40px 40px 40px;
+}
+
+.left-tri {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 40px 40px 40px 0;
+  border-color: white black white white;
+}
