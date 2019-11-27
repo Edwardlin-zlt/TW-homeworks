@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test</title>
+</head>
+
+<body>
+  <audio src="./bgmusic.m4a" autoplay="autoplay" loop="loop" preload="auto"></audio>
+  <div class="main">
+    <form action="#" method="get">
+      <div class="paper-head">
+        <h1 class="paper-title">统一建模语言理论测试</h1>
+        <table>
+          <tr>
+            <td>考试科目: </td>
+            <td width="150px">统一建模语言</td>
+            <td>时间: </td>
+            <td width="150px">100分钟</td>
+            <td>得分: </td>
+            <td width="150px">100</td>
+          </tr>
+          <tr>
+            <td>
+              <label for="class-num">班级: </label>
+            </td>
+            <td width="150px">
+              <input type="text" value="1班" name="class-num" id="class-num">
+            </td>
+            <td>
+              <label for="student-num">学号: </label>
+            </td>
+            <td width="150px">
+              <input type="text" name="student-num" id="student-num" value="001">
+            </td>
+            <td>
+              <label for="student-name">姓名: </label>
+            </td>
+            <td width="150px">
+              <input type="text" name="student-name" id="student-name" value="XXX">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="fillin">
+        <h2>一、填空题（每空5分，共20分）</h2>
+        <ol>
+          <li>
+            <label for="fillin-01">UML的中文全称是: </label>
+            <!-- TODO inline ele margin -->
+            <input type="text" name="fillin-01" id="fillin-01" value="统一建模语言">
+          </li>
+          <li>
+            <label for="fillin-02-01">对象最突出的特征是: </label>
+            <input type="text" name="fillin-02-01" id="fillin-02-01" width="140px" value="封装性">
+            <input type="text" name="fillin-02-02" id="fillin-02-02" width="140px" value="继承性">
+            <input type="text" name="fillin-02-03" id="fillin-02-03" width="140px" value="多态性">
+            <!-- TODO submit multiple forms at same time -->
+          </li>
+        </ol>
+      </div>
+      <div class="select">
+        <h2>二、选择题（每题10分，共20分）</h2>
+        <ol>
+          <li>
+            <label for="select-01">UML与软件工程的关系是: </label>
+            <br>
+            <input type="radio" name="select-01-A" id="select-01-A" checked>
+            <label for="">(A) UML就是软件工程</label>
+            <br>
+            <input type="radio" name="select-01-B" id="select-01-B">
+            <label for="">(B) UML参与到软件工程中软件开发过程的几个阶段</label>
+            <br>
+            <input type="radio" name="select-01-C" id="select-01-C">
+            <label for="">(C) UML与软件工程无关</label>
+            <br>
+            <input type="radio" name="select-01-D" id="select-01-D">
+            <label for="">(D) UML是软件工程的一部分</label>
+          </li>
+          <li>
+            <label for="select-02">Java语言支持</label>
+            <br>
+            <input type="radio" name="select-02-A" id="select-02-A" checked>
+            <label for="">(A) 单继承</label>
+            <br>
+            <input type="radio" name="select-02-B" id="select-02-B">
+            <label for="">(B) 多继承</label>
+            <br>
+            <input type="radio" name="select-02-C" id="select-02-C">
+            <label for="">(C) 单继承和多继承都支持</label>
+            <br>
+            <input type="radio" name="select-02-D" id="select-02-D">
+            <label for="">(D) 单继承与多继承都不支持</label>
+          </li>
+        </ol>
+      </div>
+      <div class="multi-select">
+        <h2>三、多选题（每题10分，共20分）</h2>
+        <ol>
+          <li>
+            <label for="multi-select-01">用例的粒度分为以下哪三种？</label>
+            <br>
+            <input type="checkbox" name="multi-select-01-A" id="multi-select-01-A" checked>
+            <label for="">(A) 概述级</label>
+            <br>
+            <input type="checkbox" name="multi-select-01-B" id="multi-select-01-B">
+            <label for="">(B) 需求级</label>
+            <br>
+            <input type="checkbox" name="multi-select-01-C" id="multi-select-01-C">
+            <label for="">(C) 用户目标级</label>
+            <br>
+            <input type="checkbox" name="multi-select-01-D" id="multi-select-01-D">
+            <label for="">(D) 子功能级</label>
+          </li>
+          <li>
+            <label for="multi-select-02">类图由以下哪三部分组成：</label>
+            <br>
+            <input type="checkbox" name="multi-select-02-A" id="multi-select-02-A" checked>
+            <label for="">(A) 名称(Name)</label>
+            <br>
+            <input type="checkbox" name="multi-select-02-B" id="multi-select-02-B">
+            <label for="">(B) 属性(Attribute)</label>
+            <br>
+            <input type="checkbox" name="multi-select-02-C" id="multi-select-02-C">
+            <label for="">(C) 操作(Operation)</label>
+            <br>
+            <input type="checkbox" name="multi-select-02-D" id="multi-select-02-D">
+            <label for="">(D) 方法(Function)</label>
+          </li>
+        </ol>
+      </div>
+      <div class="judge">
+        <h2>四、判断题（每题10分，共20分）</h2>
+        <ol>
+          <li>
+            <label for="judge-01-y">1.用例图只是用于和客户交流和沟通的，用于确定需求</label>
+            <input type="radio" name="judge-01-y" id="judge-01-y" checked><label for="">√</label>
+            <input type="radio" name="judge-01-n" id="judge-01-n"><label for="">×</label>
+          </li>
+          <li>
+            <label for="judge-02-y">2.在状态图中，终止状态在一个状态图中允许有任意多个。</label>
+            <input type="radio" name="judge-02-y" id="judge-02-y" checked><label for="">√</label>
+            <input type="radio" name="judge-02-n" id="judge-02-n"><label for="">×</label>
+          </li>
+        </ol>
+      </div>
+      <div class="describe">
+        <h2>五、简答题（每题20分，共20分</h2>
+        <ol>
+          <li>
+            <label for="describe-01">简述什么是模型以及模型的简单表现形式？</label>
+            <br>
+            <!-- TODO 代码里换行了，实际展示效果也会换行 -->
+            <textarea name="describe-01" id="describe-01" cols="100" rows="10">模型是对现实世界的简化和抽象，模型是对研究的系统、过程、事物和概念的一种表达形式。可以是物理实体;可以是某种图形，或者一种数学表达式。 </textarea>
+            <!--<textarea name="describe-01" id="describe-01" cols="100" rows="10">
+              模型是对现实世界的简化和抽象，模型是对研究的系统、
+              过程、事物和概念的一种表达形式。可以是物理实体;可以是某种图形，或者一种数学表达式。
+            </textarea>-->
+          </li>
+        </ol>
+      </div>
+      <input type="submit" value="计算分数">
+    </form>
+  </div>
+</body>
+
+</html>
