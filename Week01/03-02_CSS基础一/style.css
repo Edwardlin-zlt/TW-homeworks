@@ -1,0 +1,117 @@
+/* Web font */
+@font-face {
+  font-family: 'cantarellregular';
+  src: url('./fonts/1/cantarell-regular-webfont.woff2') format('woff2'),
+    url('./fonts/1/cantarell-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'kaushan_scriptregular';
+  src: url('./fonts/2/kaushanscript-regular-webfont.woff2') format('woff2'),
+    url('./fonts/2/kaushanscript-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-family: 'cantarellregular';
+  font-size: 1.4em;
+  color: #ffffff;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ol {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: 1px solid white;
+  padding: 4px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.main {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.top-row {
+  background-color: #fc4f47;
+  border-radius: 5%;
+  justify-content: right;
+}
+
+.title {
+  display: inline-block;
+  font-family: 'kaushan_scriptregular';
+  font-size: 1em;
+  margin-left: 0.4em;
+}
+
+.tri-downside {
+  display: inline-block;
+  border-color: #ffffff #fc4f47 #fc4f47 #fc4f47;
+  border-style: solid;
+  border-width: 0.5em 0.5em 0 0.5em;
+  margin: 0 0.4em 0 0.7em;
+  height: 0;
+  width: 0;
+}
+
+.interval-row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.tri-upside {
+  border-color: #ffffff #ffffff #fc4f47 #ffffff;
+  border-style: solid;
+  border-width: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0 0.4em 0 0.7em;
+  height: 0;
+  width: 0;
+}
+
+.list-items {
+  background-color: #fc4f47;
+  border-radius: 5%;
+}
+
+.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+
+.icon1 {
+  background: url("./icons.png") no-repeat 0 70% / 400%;
+}
+
+.icon2 {
+  background: url("./icons.png") no-repeat 56% 0 / 400%;
+}
+
+.icon3 {
+  background: url("./icons.png") no-repeat 0 0 / 400%;
+}
+
+.icon-text {
+  line-height: 100%;
+}
