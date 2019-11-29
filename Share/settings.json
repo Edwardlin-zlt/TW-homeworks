@@ -55,10 +55,6 @@
           "before": ["<leader>", "n", "f"],
           "commands": ["explorer.newFile"]
       },
-      {
-          "before": ["<alt-m>"],
-          "commands": ["HookyQR.beautifyFile"]
-      },
       /* Workbench settings */
       {
           "before": ["<leader>", "z", "z"],
@@ -78,7 +74,7 @@
       },
       {
           "before": ["<leader>", "c", "l"],
-          "commands": ["editor.action.addCommentLine"]
+          "commands": ["editor.action.commentLine"]
       },
       /* insert into current html tag */
       {
@@ -94,7 +90,6 @@
       {
           "before": ["<leader>", "c", "a", "t"],
           "commands": ["workbench.action.closeEditorsInGroup"]
-
       }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -118,5 +113,6 @@
     "vim.handleKeys": {
       "<C-a>": false,
       "<C-f>": false,
+      "<C-b>": false,
     },
 }

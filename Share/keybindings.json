@@ -17,6 +17,7 @@
         "key": "alt+j",
         "command": "workbench.action.focusBelowGroup",
     },
+    // Switch focus
     {
         "key": "alt+e",
         "command": "workbench.files.action.focusFilesExplorer",
