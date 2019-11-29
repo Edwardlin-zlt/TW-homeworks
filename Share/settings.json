@@ -1,0 +1,122 @@
+{ 
+    "window.zoomLevel": 1,
+
+    "[html]": {
+        "editor.tabSize": 2,
+    },
+
+    "[css]": {
+        "editor.tabSize": 2,
+    },
+
+    /* editor general */
+    "editor.tabSize": 4,
+    "editor.lineNumbers": "relative",
+    "zenMode.hideLineNumbers": false,
+    "workbench.editor.showTabs": true,
+
+    /* .git visible */
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+
+    /*ESC keyboard remap takes effact in VScode*/
+    "keyboard.dispatch": "keyCode", 
+    "explorer.confirmDelete": false,
+
+    /* Vim Sittings */
+    "vim.easymotion": true,
+    "vim.sneak": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+      }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "n", "l"],
+        "commands": [":nohl"]
+      },
+      {
+          "before": ["<leader>", "f","m"],
+          "commands": ["HookyQR.beautifyFile"]
+      },
+      {
+          "before": ["<leader>", "n", "f"],
+          "commands": ["explorer.newFile"]
+      },
+      {
+          "before": ["<alt-m>"],
+          "commands": ["HookyQR.beautifyFile"]
+      },
+      /* Workbench settings */
+      {
+          "before": ["<leader>", "z", "z"],
+          "commands": ["workbench.action.toggleZenMode"]
+      },
+      {
+          "before": ["<leader>", "o", "s"],
+          "commands": ["workbench.action.toggleSidebarVisibility"]
+      },
+      {
+          "before": ["<leader>", "t", "t"],
+          "commands": ["workbench.action.terminal.toggleTerminal"]
+      },
+      {
+          "before": ["<leader>", "c", "c"],
+          "commands": ["editor.emmet.action.toggleComment"]
+      },
+      {
+          "before": ["<leader>", "c", "l"],
+          "commands": ["editor.action.addCommentLine"]
+      },
+      /* insert into current html tag */
+      {
+          "before": ["<leader>", "i"],
+          "after": ["c", "i", "t"]
+      },
+      /* close current tab */
+      {
+          "before": ["<leader>", "c", "t"],
+          "commands": ["workbench.action.closeActiveEditor"]
+      },
+      /* close split panel */
+      {
+          "before": ["<leader>", "c", "a", "t"],
+          "commands": ["workbench.action.closeEditorsInGroup"]
+
+      }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ],
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false,
+    },
+}
