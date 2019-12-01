@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header */
+.header {
+  background: #31394a;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+/* TODO <a> 与 <img> 标签的嵌套怎么做最好 */
+.icon-return {
+  height: 38px;
+  width: 38px;
+  margin: 0 20px;
+}
+
+.icon-return img {
+  height: 38px;
+  width: 38px;
+}
+
+.page-title {
+  padding: 0 0 2px 0;
+  font-size: 1.2em;
+  color: white;
+}
+
+.icon-cart {
+  margin-left: auto;
+  margin-right: 20px;
+  height: 38px;
+  width: 38px;
+}
+
+.icon-cart img {
+  height: 38px;
+  width: 38px;
+  align-self: end;
+}
+
+/* big-pic */
+.big-pic {
+  width: 100%;
+  height: 190px;
+  margin-bottom: 5px;
+  flex-shrink: 0;
+}
+
+.big-pic img {
+  width: 100%;
+  height: 100%;
+}
+
+.big-pic ul {
+  list-style: none;
+  position: absolute;
+  z-index: 999;
+  top: 210px;
+  left: 350px;
+  margin: 0 20px 0 auto;
+  display: flex;
+}
+
+.point {
+  height: 7px;
+  width: 7px;
+  border-radius: 100%;
+  background: #fff;
+  margin: 0 3px;
+}
+
+.point-unchecked {
+  background: #555555;
+}
+
+/* cates */
+.cates {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 95%;
+  align-self: center;
+}
+
+.cate-item {
+  flex: 0 0 30%;
+  height: 2em;
+  line-height: 2.1em;
+  margin: 4px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+}
+
+.cate-checked {
+  background: #ff2b55;
+  color: white;
+}
+
+/* contents-list */
+.contents-list {
+  width: 90%;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.contents-list > ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  display: flex;
+  width: 100%;
+}
+
+.content-row {
+  display: flex;
+  padding: 15px 0;
+  list-style-type: none;
+  border-bottom: 1.2px solid rgba(180, 180, 180, 0.3);
+}
+
+.content-row img {
+  width: 40%;
+  height: 90px;
+}
+
+.content-info {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-info>h2 {
+  font-size: 1rem;
+}
+
+.content-info p {
+  font-size: .8rem;
+  color: #bbb;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.content-info>div {
+  margin-top: auto;
+  font-size: .8rem;
+}
+
+.price {
+  color: red;
+}
+
+.used-num {
+  color: #bbb;
+  margin-left: 15px;
+}
