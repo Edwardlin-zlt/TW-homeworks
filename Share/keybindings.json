@@ -26,4 +26,9 @@
         "key": "alt+t",
         "command": "workbench.action.terminal.toggleTerminal",
     },
+    {
+        "key": "Ctrl+j",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "terminalFocus"
+    }
 ]
