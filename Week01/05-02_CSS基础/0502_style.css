@@ -1,33 +1,33 @@
 /* font-face */
-@font-face {
+/*@font-face {
   font-family: "iconfont";
   src: url('./iconfont/iconfont.woff') format('woff');
   src: url('./iconfont/iconfont.woff2') format('woff2');
-  /* IE9 */
+   IE9 
   src: url('./iconfont/iconfont.eot') format('embedded-opentype'),
-    /* IE6-IE8 */
+     IE6-IE8 
     url('./iconfont/iconfont.woff') format('woff'),
     url('./iconfont/iconfont.ttf') format('truetype'),
-    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+     chrome, firefox, opera, Safari, Android, iOS 4.2+ 
     url('./iconfont/iconfont.svg') format('svg');
-  /* iOS 4.1- */
-}
+   iOS 4.1- 
+}*/
 
-.iconfont {
+/*.iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
 
-.icon-yinhao:before {
+/*.icon-yinhao:before {
   content: "\e654";
-}
+}*/
 
-.icon-quotation:before {
+/*.icon-quotation:before {
   content: "\e615";
-}
+}*/
 
 /* general */
 * {
@@ -38,6 +38,7 @@
 html,
 body {
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* main */
@@ -51,7 +52,13 @@ body {
   font-family: "iconfont";
   padding: 5%;
   box-sizing: border-box;
-  background: linear-gradient(to bottom right, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(
+    to bottom right,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
 }
 
 /* part 1 */
@@ -62,7 +69,7 @@ body {
   margin: 20px;
 }
 
-.part1>h1 {
+.part1 > h1 {
   color: white;
   text-align: center;
   text-shadow: 0 10px 0 #000;
@@ -78,9 +85,13 @@ body {
   align-items: center;
 }
 
-.part2>p {
+.part2 > p {
   width: 50%;
+  padding: 1em 2em;
+  border-radius: 0.4em;
   font-family: "iconfont";
+  background: white;
+  color: #008116;
 }
 
 /* part3 */
@@ -91,7 +102,7 @@ body {
   height: 300px;
 }
 
-.part3>.container {
+.part3 > .container {
   color: white;
   display: flex;
   justify-content: space-around;
@@ -106,7 +117,8 @@ body {
   flex: 0 0 30%;
 }
 
-.pic-story>h3 {
+.pic-story > h3 {
+  visibility: hidden;
   display: inline-block;
   text-align: center;
   width: 70%;
@@ -114,19 +126,27 @@ body {
   z-index: 5;
 }
 
-.pic-story>p {
+.pic-story > p {
+  visibility: hidden;
   text-align: center;
   font-style: italic;
   width: 80%;
   z-index: 5;
 }
 
-.pic-story>bottom {
+.pic-story > bottom {
+  visibility: hidden;
   background: #000;
   margin: auto 0 1rem 0;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   z-index: 5;
+}
+
+.pic-story:hover > h3,
+.pic-story:hover > p,
+.pic-story:hover > bottom {
+  visibility: visible;
 }
 
 .pic-story-1 {
@@ -135,7 +155,7 @@ body {
   position: relative;
 }
 
-.pic-story-1:hover>.mask {
+.pic-story-1:hover > .mask {
   width: 100%;
   height: 100%;
   background-color: rgba(58, 1, 142, 0.44);
@@ -147,6 +167,18 @@ body {
 .pic-story-2 {
   background: url(./image/midtown.png) no-repeat;
   background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pic-story-2:hover > .mask {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transform: rotate(-30deg) translate(0, -50%);
 }
 
 .pic-story-3 {
@@ -155,7 +187,7 @@ body {
   position: relative;
 }
 
-.pic-story-3:hover>.mask {
+.pic-story-3:hover > .mask {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 231, 179, 0.3);
@@ -164,7 +196,7 @@ body {
   z-index: 1;
 }
 
-.pic-story-3>h3 {
+.pic-story-3 > h3 {
   border-bottom: 1px solid black;
 }
 
@@ -176,16 +208,16 @@ body {
   align-items: center;
 }
 
-.part4>.triangle {
+.part4 > .triangle {
   width: 0;
   height: 0;
-  border: 1rem solid;
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) white rgba(0, 0, 0, 0);
+  border: 10px solid transparent;
+  border-bottom-color: white;
 }
 
-.part4>.container {
+.part4 > .container {
   width: 70%;
-  height: 250px;
+  height: auto;
   background-color: #fff;
   padding: 1rem;
   border-radius: 5px;
@@ -193,6 +225,6 @@ body {
   column-fill: auto;
 }
 
-.part4>.container>p {
+.part4 > .container > p {
   margin-bottom: 1em;
 }
