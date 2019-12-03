@@ -17,33 +17,42 @@ li {
   list-style: none;
 }
 /* main */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    ". header ."
+    ". section ."
+    ". footer .";
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* header */
 header {
+  grid-area: header;
   background: url("素材/starfield-banner.jpg ");
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: white;
-  margin-bottom: 10px;
-}
-
-header .logo-link {
-  padding: 10px;
 }
 
 header .logo {
   width: 110px;
-  margin: 11px;
+  margin-top: 20px;
 }
 
+/* TODO 为什么div.main-navi-bar和div.sub-navi-bar在浏览器没有高度 */
 .main-navi-bar ul {
   margin-block-start: 20px;
-  margin-block-end: 20px;
+  margin-block-end: 10px;
 }
 
 .main-navi-bar li {
   display: inline-block;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px;
   border-right: 1.4px solid #aaa;
 }
@@ -52,17 +61,14 @@ header .logo {
   border: none;
 }
 
-.sub-navi-bar {
+.sub-navi-bar ul {
   background-color: #555555;
-}
-
-.sub-navi-bar {
   padding: 10px;
 }
 
 .sub-navi-bar li {
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   padding: 4px;
   border-right: 1px solid #aaa;
 }
@@ -71,16 +77,64 @@ header .logo {
   border: none;
 }
 
+.search {
+  display: flex;
+}
+
+form {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  margin: 0 auto;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  height: 42px;
+  width: 100%;
+  background-color: #333;
+  color: #717171;
+}
+
+button {
+  font-family: "iconfont";
+  height: 42px;
+  width: 42px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 42px;
+  background-color: transparent;
+  color: white;
+}
+
+.photo-icon,
+.share-icon {
+  font-family: "iconfont";
+  display: inline-block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  color: white;
+}
+
 /* section */
 .content-grid {
+  grid-area: section;
   display: grid;
-  grid-template-columns: 1fr repeat(4, 250px) 1fr;
-  grid-template-rows: repeat(4, 250px);
+  grid-template-columns: repeat(4, 320px);
+  grid-template-rows: repeat(4, 320px) 1fr;
   grid-template-areas:
-    ". story1 story1 story2 story3 ."
-    ". story1 story1 story4 story4 ."
-    ". story5 story6 story6 story7 ."
-    ". story8 story9 story10 story11 .";
+    "story1 story1 story2 story3"
+    "story1 story1 story4 story4"
+    "story5 story6 story6 story7"
+    "story8 story9 story10 story11"
+    "more more more more";
   gap: 10px;
 }
 
@@ -142,6 +196,12 @@ header .logo {
 .story-box-5 {
   grid-area: story5;
   background: url(./images/ssc2017-14a1.jpg) no-repeat center;
+  position: relative;
+}
+.photo-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 .story-box-6 {
   grid-area: story6;
@@ -158,6 +218,7 @@ header .logo {
 .story-box-9 {
   grid-area: story9;
   background: url(./images/io-home.gif) no-repeat center;
+  position: relative;
 }
 .story-box-10 {
   grid-area: story10;
@@ -166,4 +227,34 @@ header .logo {
 .story-box-11 {
   grid-area: story11;
   background: url(./images/fermiicecube_as.jpg) no-repeat center;
+}
+
+.more-stories {
+  grid-area: more;
+  background: #1d4288;
+  padding: 8px 0;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+
+/* footer */
+footer {
+  grid-area: footer;
+  color: white;
+}
+footer .logo {
+  width: 90px;
+  float: left;
+}
+
+ul {
+  clear: left;
+  float: right;
+}
+
+footer li {
+  display: inline-block;
+  color: #6385ba;
+  margin: 10px;
 }
