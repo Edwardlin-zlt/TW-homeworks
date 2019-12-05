@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        background: #555;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* TODO baseline与flex-end的区别？ */
+        /* align-items: baseline; */
+        /* baseline 以 小写x 的最底端为标准 */
+      }
+      .box {
+        height: 80px;
+        width: 80px;
+        background: darkgoldenrod;
+      }
+
+      /* .box:nth-child(odd) {
+        background: darkcyan;
+      }
+
+      .box:nth-child(odd) {
+        background: darkcyan;
+      } */
+      .box1 {
+        background-color: darkcyan;
+        /* flex-grow: 1; */
+        flex: 1;
+      }
+
+      .box2 {
+        background-color: darkgoldenrod;
+        /* flex-grow: 2; */
+        flex: 2;
+      }
+
+      .box3 {
+        background: darkgreen;
+        /* flex-grow: 1; */
+        flex: 1;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box1"><h1>1</h1></div>
+      <div class="box box2"><h2>2</h2></div>
+      <div class="box box3"><h3>3</h3></div>
+    </div>
+  </body>
+</html>
