@@ -48,12 +48,14 @@ header .logo {
 .main-navi-bar ul {
   margin-block-start: 20px;
   margin-block-end: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .main-navi-bar li {
   display: inline-block;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 14px;
+  padding: 8px;
   border-right: 1.4px solid #aaa;
 }
 
@@ -64,12 +66,14 @@ header .logo {
 .sub-navi-bar ul {
   background-color: #555555;
   padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .sub-navi-bar li {
   display: inline-block;
   font-size: 12px;
-  padding: 4px;
+  padding: 2px;
   border-right: 1px solid #aaa;
 }
 
@@ -84,7 +88,7 @@ header .logo {
 form {
   display: inline-block;
   position: relative;
-  width: 200px;
+  width: 160px;
   margin: 0 auto;
 }
 
@@ -95,31 +99,39 @@ button {
 }
 
 input {
-  height: 42px;
+  box-sizing: border-box;
+  height: 30px;
   width: 100%;
   background-color: #333;
   color: #717171;
+  padding: 8px;
 }
 
 button {
   font-family: "iconfont";
-  height: 42px;
-  width: 42px;
   position: absolute;
   top: 0;
   right: 0;
-  font-size: 42px;
+  font-size: 30px;
   background-color: transparent;
   color: white;
+}
+
+button:hover,
+.photo-icon:hover,
+.share-icon:hover {
+  cursor: pointer;
+}
+
+.navi-bar li:hover {
+  cursor: pointer;
 }
 
 .photo-icon,
 .share-icon {
   font-family: "iconfont";
   display: inline-block;
-  height: 42px;
-  width: 42px;
-  font-size: 42px;
+  font-size: 30px;
   color: white;
 }
 
@@ -127,8 +139,8 @@ button {
 .content-grid {
   grid-area: section;
   display: grid;
-  grid-template-columns: repeat(4, 320px);
-  grid-template-rows: repeat(4, 320px) 1fr;
+  grid-template-columns: repeat(4, 280px);
+  grid-template-rows: repeat(4, 280px) 1fr;
   grid-template-areas:
     "story1 story1 story2 story3"
     "story1 story1 story4 story4"
@@ -146,6 +158,10 @@ button {
   justify-content: flex-end;
 }
 
+.story-box:hover {
+  border: 2px solid white;
+}
+
 .pic-title {
   align-self: flex-start;
   padding: 4px;
@@ -153,8 +169,9 @@ button {
 }
 
 .pic-banner {
-  padding: 4px;
+  padding: 2px;
   background-color: #ffffffcc;
+  font-size: 0.9rem;
 }
 
 .story-box-1 {
@@ -182,7 +199,7 @@ button {
 }
 
 .box-footer {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   border-top: 1px solid white;
   margin-top: auto;
   display: flex;
@@ -192,6 +209,7 @@ button {
 .story-box-4 {
   grid-area: story4;
   background: url(./images/s69-39961.jpg) no-repeat center;
+  background-size: cover;
 }
 .story-box-5 {
   grid-area: story5;
@@ -238,6 +256,10 @@ button {
   font-size: 1rem;
 }
 
+.more-stories:hover {
+  cursor: pointer;
+}
+
 /* footer */
 footer {
   grid-area: footer;
@@ -257,4 +279,49 @@ footer li {
   display: inline-block;
   color: #6385ba;
   margin: 10px;
+}
+
+footer li:hover {
+  cursor: pointer;
+  background: #ffffff33;
+}
+
+@media (min-width: 1370px) {
+  .content-grid {
+    grid-template-columns: repeat(4, 320px);
+    grid-template-rows: repeat(4, 320px) 1fr;
+  }
+
+  .main-navi-bar li {
+    font-size: 18px;
+  }
+
+  .sub-navi-bar li {
+    font-size: 12px;
+  }
+
+  form {
+    width: 200px;
+  }
+
+  input {
+    height: 42px;
+  }
+
+  button {
+    font-size: 42px;
+  }
+  .photo-icon,
+  .share-icon {
+    font-size: 42px;
+  }
+
+  .pic-banner {
+    padding: 4px;
+    font-size: 1rem;
+  }
+
+  .box-footer {
+    font-size: 0.8rem;
+  }
 }
