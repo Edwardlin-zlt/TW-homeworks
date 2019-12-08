@@ -16,15 +16,16 @@ li {
   padding-inline-start: 0;
   list-style: none;
 }
+
 /* main */
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(100px, auto);
   grid-template-areas:
     ". header ."
     ". section ."
     ". footer .";
-  grid-auto-rows: minmax(100px, auto);
   gap: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -34,7 +35,6 @@ header {
   grid-area: header;
   background: url("素材/starfield-banner.jpg ");
   display: flex;
-  justify-content: space-between;
   align-items: center;
   color: white;
 }
@@ -44,12 +44,16 @@ header .logo {
   margin-top: 20px;
 }
 
-/* TODO 为什么div.main-navi-bar和div.sub-navi-bar在浏览器没有高度 */
+.navi-bar {
+  flex: 1;
+}
+
 .main-navi-bar ul {
   margin-block-start: 20px;
   margin-block-end: 10px;
+  width: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 .main-navi-bar li {
@@ -67,7 +71,7 @@ header .logo {
   background-color: #555555;
   padding: 10px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 .sub-navi-bar li {
@@ -193,6 +197,7 @@ button:hover,
   font-size: 0.7rem;
   justify-content: flex-start;
 }
+
 .box-header {
   font-size: 0.9rem;
   border-bottom: 1px solid white;
@@ -270,7 +275,7 @@ footer .logo {
   float: left;
 }
 
-ul {
+footer ul {
   clear: left;
   float: right;
 }
