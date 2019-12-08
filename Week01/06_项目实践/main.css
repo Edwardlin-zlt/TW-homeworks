@@ -9,6 +9,11 @@ body {
   margin: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 ul,
 li {
   margin-block-start: 0;
@@ -31,62 +36,62 @@ li {
 }
 
 /* header */
-header {
+.header {
   grid-area: header;
   background: url("素材/starfield-banner.jpg ");
   display: flex;
-  align-items: center;
-  color: white;
+  align-items: flex-start;
 }
 
-header .logo {
+.header .logo {
   width: 110px;
   margin-top: 20px;
 }
 
-.navi-bar {
-  flex: 1;
-}
-
-.main-navi-bar ul {
-  margin-block-start: 20px;
-  margin-block-end: 10px;
-  width: auto;
+.nav {
+  flex-grow: 1;
+  color: white;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 20px 20px 0 0;
 }
 
-.main-navi-bar li {
+.main-nav {
+  margin: 20px 0 10px 0;
+}
+
+.main-nav li {
   display: inline-block;
-  font-size: 14px;
+  font-size: 16px;
   padding: 8px;
   border-right: 1.4px solid #aaa;
 }
 
-.main-navi-bar ul li:last-child {
+.main-nav li:last-child {
   border: none;
+  padding-right: 0;
 }
 
-.sub-navi-bar ul {
+.sub-nav {
   background-color: #555555;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
 }
 
-.sub-navi-bar li {
+.sub-nav li {
   display: inline-block;
-  font-size: 12px;
+  box-sizing: border-box;
+  font-size: 13px;
   padding: 2px;
   border-right: 1px solid #aaa;
 }
 
-.sub-navi-bar ul li:last-child {
+.sub-nav li:last-child {
   border: none;
 }
 
 .search {
   display: flex;
+  margin-top: 45px;
 }
 
 form {
@@ -266,27 +271,28 @@ button:hover,
 }
 
 /* footer */
-footer {
+.footer {
   grid-area: footer;
   color: white;
 }
-footer .logo {
+
+.footer .logo {
   width: 90px;
   float: left;
 }
 
-footer ul {
+.footer ul {
   clear: left;
   float: right;
 }
 
-footer li {
+.footer li {
   display: inline-block;
   color: #6385ba;
   margin: 10px;
 }
 
-footer li:hover {
+.footer li:hover {
   cursor: pointer;
   background: #ffffff33;
 }
