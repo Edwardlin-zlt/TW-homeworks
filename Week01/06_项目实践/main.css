@@ -296,11 +296,11 @@ ul {
     grid-template-rows: repeat(4, 320px) 1fr;
   }
 
-  .main-navi-bar li {
+  .main-nav-bar li {
     font-size: 18px;
   }
 
-  .sub-navi-bar li {
+  .sub-nav-bar li {
     font-size: 12px;
   }
 
