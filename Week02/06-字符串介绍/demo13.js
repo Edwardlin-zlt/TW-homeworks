@@ -17,5 +17,6 @@ function toCamelStyle(rowStr) {
 a = toCamelStyle("abc_bcd"); // 输出 'abcBcd'
 b = toCamelStyle("a_3_c_d_ef"); // 输出 'a3CDEf'
 c = toCamelStyle("_a_b_c_d_ef"); // 输出 '_aBCDEf'
+d = toCamelStyle("Asdf_asdf");
 
-console.log(a, b, c);
+console.log(a, b, c, d);
