@@ -65,12 +65,18 @@ var a = repeatStr('hello', 4);  //hellohellohellohello
 
 答案：
 ```
-function repeatStr(str, times){
-    result = ""
-    for (var i = 0; i<times; i++){
-        result += str
-    }
-    return result
+function repeatStr(str, times) {
+  result = "";
+  for (var i = 0; i < times; i++) {
+    result += str;
+  }
+  return result;
+}
+
+var a = repeatStr('hello', 2);  //hellohello
+var b = repeatStr('hello', 4);  //hellohellohellohello
+
+console.log(a, b);
 ```
 
 ## 第四题： 以下代码的执行结果是：
@@ -208,3 +214,42 @@ function add(num){
 * 通过`toString`属性的定义返回最后的结果。
 
 * `toString`对于对象的作用： 如果对象具有 toString() 方法，则调用这个方法。如果它返回一个原始值，js将这个值转换为字符串（如果本身不是字符串的话），并返回这个字符串结果；如果对象没有 toString() 方法，或者这个方法并不返回一个原始值，那么js会调用 valueOf() 方法。如果存在这个方法，则js调用它。如果返回值是原始值，js将这个值转换为字符串（如果本身不是字符串的话），并返回这个字符串结果；否则，js无法从 toString() 或 valueOf() 获得一个原始值，因此这时它将抛出一个类型错误异常。
+
+
+## 改错
+
+3. 第三题的 repeatStr 函数的函数体的 `}` ??
+
+```
+function repeatStr(str, times) {
+  result = "";
+  for (var i = 0; i < times; i++) {
+    result += str;
+  }
+  return result;
+}
+
+var a = repeatStr('hello', 2);  //hellohello
+var b = repeatStr('hello', 4);  //hellohellohellohello
+
+console.log(a, b);
+```
+
+6. 第六题，在执行multiplicationCalculator()时候，程序返回的是1。
+
+```
+function multiplicationCalculator(...numbers) {
+  if (numbers.length === 0) {return "Caution: Nothing to execute the action!"};
+  var result = 1;
+  for (number of numbers) {
+    result *= number;
+  }
+  return result;
+}
+
+var a = multiplicationCalculator(3, 6); // 18
+var b = multiplicationCalculator(3, 6, 2); // 36
+var c = multiplicationCalculator(1, 2, 5, 6); // 60
+
+console.log(a, b, c);
+```
