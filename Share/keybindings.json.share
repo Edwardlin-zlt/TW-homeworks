@@ -1,0 +1,46 @@
+// Place your key bindings in this file to override the defaults
+[
+  /* vim like pane navigation */
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus"
+  },
+  // Switch focus
+  {
+    "key": "alt+e",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "editorTextFocus"
+  },
+  TODO "alt+e" switch back to editor
+  {
+    "key": "alt+e",
+    "command": "workbench.action.focusRightGroup",
+    "when": "explorerViewletVisible"
+  },
+  {
+    "key": "alt+u",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+u",
+    "command": "workbench.action.focusPreviousGroup",
+    "when": "terminalFocus"
+  }
+]
