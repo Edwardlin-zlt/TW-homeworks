@@ -92,7 +92,7 @@ greeting();
 
 如果对象`value`是一个函数，储存的将会是函数在堆内存的地址。如果将其通过赋值语句，如本题的`var greeting = person.greeting;`，变量名将直接获得函数的地址值。此时的通过变量名绑定的地址来调用函数，上下文环境将是`window`本身（本例中），`this`将代表`window`，直接返回`window`中`name`变量的值。
 
----
+===
 
 ```
 var name = 'window-Jack';
@@ -106,6 +106,14 @@ var greeting = person.greeting.bind(person);
 greeting();
 ```
 
+打印`Hi! I'm person-Rose.`
+
+> `bind`方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。
+
+所以上述代码中的`person`对象作为`greeting`新函数的`this`。在调用的时候，`this.name`就是`person.name`。
+
+===
+
 ```
 var name = 'window-Jack';
 var person = {
@@ -117,6 +125,14 @@ var person = {
 person.greeting.apply(this);
 ```
 
+打印`Hi! I'm window-Jack.`
+
+> apply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。
+
+`apply`方法的参数`this`是`window`，所以greeting方法执行的时候，其`this`值是`window`。
+
+===
+
 ```
 var name = 'window-Jack';
 var person = {
@@ -127,3 +143,51 @@ var person = {
 }
 person.greeting.call(this);
 ```
+
+打印`Hi! I'm window-Jack.`
+
+原理同上，`all()`方法的作用和 `apply()` 方法类似，区别就是call()方法接受的是参数列表，而apply()方法接受的是一个参数数组。
+
+## 第五题 编写程序，实现下列需求：计算下面 fruit 对象共有多少个水果，应该输出 50。
+
+```
+var fruit = {
+   apple: 20,
+   pear: 20,
+   peach: 10
+};
+
+fruit.countAll = function() {
+  s = 0;
+  for (name in fruit) {
+    s += fruit[name];
+  }
+  return s;
+}();
+```
+
+## 第六题 什么是 JSON？JSON 和 JavaScript 的关系以及 JSON 的适用场景是什么？
+
+> JSON 是一种语法，用来序列化对象、数组、数值、字符串、布尔值和 null 。
+
+### JSON 和 JavaScript 的关系
+
+它基于 JavaScript 语法，但与之不同：JavaScript不是JSON，JSON也不是JavaScript。但其实基本上和JavaScript的对象差不多。
+
+不同点：
+
+1. JSON的属性名称必须是双引号括起来的字符串；最后一个属性后不能有逗号。
+
+2. 禁止出现前导零（ JSON.stringify 方法自动忽略前导零，而在 JSON.parse 方法中将会抛出 SyntaxError）；如果有小数点, 则后面至少跟着一位数字。
+
+3. 只有有限的一些字符可能会被转义；禁止某些控制字符； Unicode 行分隔符 （U+2028）和段分隔符 （U+2029）被允许 ; 字符串必须用双引号括起来。</Week03/S01-对象/demo-t6-1.js>
+
+### JSON的适用场景
+
+1. 网站表示和传输数据
+2. 软件配置文件
+3. 轻量级数据储存与交换
+
+## 第七题 阅读推荐链接的文章，复习 JavaScript 对象基础，并总结为一篇文章，发布到简书上，并贴上链接。
+
+<https://www.jianshu.com/p/89de340ecddd>

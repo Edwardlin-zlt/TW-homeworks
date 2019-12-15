@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 找闭包
+      // demo 0
+      (function() {
+        var demoIndex = 0;
+
+        var increase = function(num) {
+          return num + 1;
+        };
+
+        var decrease = function(num) {
+          return num - 1;
+        };
+
+        var counterFunc = function() {
+          var num = 0;
+
+          return {
+            get: function() {
+              return num;
+            },
+            increase: function() {
+              return num + 1;
+            },
+            decrease: function() {
+              return num + 1;
+            }
+          }
+        };
+
+        var counter = counterFunc();
+        counter.get();
+      })();
+
+
+      // demo 1
+      (function() {
+        function foo() {
+          var a = 2;
+          function baz() {
+            console.log(a);
+          }
+          return baz;
+        }
+
+        var bar = foo();
+        bar();
+      })();
+
+      // demo 2
+      (function() {
+        var fn;
+        function foo() {
+          var a = 2;
+          function baz() {
+            console.log(a);
+          }
+          fn = baz;
+        }
+
+        foo();
+        fn();
+      })();
+
+      // demo 3
+      (function() {
+        var fn;
+        var m = 20;
+        function foo() {
+          var a = 2;
+          function baz(a) {
+            console.log(a);
+          }
+          fn = baz;
+        }
+        function bar() {
+          fn(m);
+        }
+
+        foo();
+        bar();
+      })();
+
+      // demo04
+      (function() {
+        function foo() {
+          var a = 2;
+
+          return function bar() {
+            var b = 9;
+
+            return function fn() {
+              console.log(a);
+            };
+          };
+        }
+
+        var bar = foo();
+        var fn = bar();
+        fn();
+      })();
+
+      // demo05
+      (function() {
+        function foo() {
+          var a = 2;
+
+          return function bar() {
+            var b = 9;
+
+            return function fn() {
+              console.log(a + b);
+            };
+          };
+        }
+
+        var bar = foo();
+        var fn = bar();
+        fn();
+      })();
+
+      // demo06
+      (function() {
+        function foo() {
+          var a = 10;
+
+          function fn1() {
+            return a;
+          }
+
+          function fn2() {
+            return 10;
+          }
+
+          fn2();
+        }
+
+        foo();
+      });
+    </script>
+  </body>
+</html>

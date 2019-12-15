@@ -1,0 +1,86 @@
+%%  Created with miMind software.  %%
+
+> Text: JS对象
+   > Title: 对象基础
+      > Title: 对象是一个包含相关数据和方法的集合（通常由一些变量和函数组成，我们称之为对象里面的属性和方法）
+      > Title: 一个对象由许多的成员组成，每一个成员都拥有一个名字（像上面的name、age），和一个值（如['Bob', 'Smith']、32）。
+每一个名字/值（name/value）对被逗号分隔开，并且名字和值之间由冒号（:）分隔
+      > Node Notes: var objectName = {
+  member1Name : member1Value,
+  member2Name : member2Value,
+  member3Name : member3Value
+}
+         > Title: Python中的 {key: value}
+      > Title:  创建对象
+         > Title: 对象就是一组相似数据和功能的集合
+         > Title: 创建对象两种方式
+            > Title: 对象字面量 使用key/value的形式直接创建对象
+               > Title: var obj = {};
+               > Title: 这种方式直接通过花括号将对象的属性包起来，使用key/value的方式创建对象属性，每个属性之间用逗号隔开。
+               > Title: 注意：如果是最后一个属性，后面就不要加逗号，因为在一些旧的浏览器下会报错。
+            > Title: 构造函数(new关键字)
+               > Title: var o = new Object(); // 创建一个空对象，效果等同{}.
+               > Title: var d = new Date(); // 创建一个表示当前时间的对象
+               > Title: var r = new RegExp("js"); // 创建一个正则表达式对象
+         > Text: Ref http://www.codexiu.cn/javascript/blog/40328/
+   > Title: 点表示法(dot notation)
+      > Title: 对象的名字表现为一个命名空间(namespace)，它必须写在第一位——当你想访问对象内部的属性或方法时，然后是一个点(.)，紧接着是你想要访问的项目，标识可以是简单属性的名字(name)，或者是数组属性的一个子元素，又或者是对象的方法调用。
+      > Title: 子命名空间
+         > Title: 用一个对象来做另一个对象成员的值
+         > Title: 链式的点表示法
+   > Title: 括号表示法(bracket notation)
+      > Title: 对象有时被称之为关联数组(associative array)了——对象做了字符串到值的映射，而数组做的是数字到值的映射。
+         > Title: 可是好奇怪的是，nome是string，但console中不给它加引号
+      > Title: 括号表示法一个有用的地方是它不仅可以动态的去设置对象成员的值，还可以动态的去设置成员的名字。
+         > Title: obj[variable]
+   > Title: 设置对象成员
+      > Title: 修改成员的值
+      > Title: 创建新成员
+   > Title: "this"的含义
+      > Title: 关键字"this"指向了当前代码运行时的对象( 原文：the current object the code is being written inside )
+      > Title: 用处
+         > Title: 它保证了当代码的上下文(context)改变时变量的值的正确性（比如：不同的person对象拥有不同的name这个属性，很明显greeting这个方法需要使用的是它们自己的name）。
+         > Title: 上下文的理解:所处的命名空间及对应的变量
+   > Title: 内建API和对象
+      > Title: 内建的对象或API不会总是自动地创建对象的实例
+> Text: REF: https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Basics
+
+> Text: this, apply, call, bind理解
+   > Title: This的指向
+      > Title: 在 ES5 中，其实 this 的指向，始终坚持一个原理：this 永远指向最后调用它的那个对象
+      > Title: 没有用Dot Notation调用的函数其this都是window?
+         > Title: 匿名函数的 this 永远指向 window
+      > Title: 严格模式没有window
+         > Title: 前面没有调用的对象那么就是全局对象 window，这就相当于是 window.a()；注意，这里我们没有使用严格模式，如果使用严格模式的话，全局对象就是 undefined，那么就会报错 Uncaught TypeError: Cannot read property 'name' of undefined
+      > Title: 不会向上寻找
+         > Title: 就算 a 中没有 name 这个属性，也不会继续向上一个对象寻找 this.name，而是直接输出 undefined
+   > Title: 怎么改变 this 的指向
+      > Title: 使用 ES6 的箭头函数
+         > Title: 箭头函数的 this 始终指向函数定义时的 this，而非执行时。
+         > Title: “箭头函数中没有 this 绑定，必须通过查找作用域链来决定其值，如果箭头函数被非箭头函数包含，则 this 绑定的是最近一层非箭头函数的 this，否则，this 为 undefined”。
+      > Title: 在函数内部使用 _this = this
+      > Title: 使用 apply、call、bind
+         > Title: apply
+            > Title: MDN定义 apply() 方法调用一个函数, 其具有一个指定的this值，以及作为一个数组（或类似数组的对象）提供的参数
+            > Title: fun.apply(thisArg, [argsArray])
+               > Title: thisArg：在 fun 函数运行时指定的 this 值。需要注意的是，指定的 this 值并不一定是该函数执行时真正的 this 值，如果这个函数处于非严格模式下，则指定为 null 或 undefined 时会自动指向全局对象（浏览器中就是window对象），同时值为原始值（数字，字符串，布尔值）的 this 会指向该原始值的自动包装对象。
+               > Title: argsArray：一个数组或者类数组对象，其中的数组元素将作为单独的参数传给 fun 函数。如果该参数的值为null 或 undefined，则表示不需要传入任何参数。从ECMAScript 5 开始可以使用类数组对象。浏览器兼容性请参阅本文底部内容。
+         > Title: call
+            > Title: fun.call(thisArg[, arg1[, arg2[, ...]]])
+            > Title: apply 和 call 的区别是 call 方法接受的是若干个参数列表，而 apply 接收的是一个包含多个参数的数组。
+         > Title: bind
+            > Title: bind()方法创建一个新的函数, 当bind被调用时， 这个新函数的this被指定为bind的第一个参数，而其余参数将作为新函数的参数
+      > Title: 函数调用的四种方法
+         > Title: 作为一个函数调用
+         > Title: 函数作为方法调用
+            > Title: this 永远指向最后调用它的那个对象
+         > Title: 使用构造函数调用函数
+            > Title: 如果函数调用前使用了 new 关键字, 则是调用了构造函数。
+这看起来就像创建了新的函数，但实际上 JavaScript 函数是重新创建的对象：
+            > Title: new的过程
+         > Title: 作为函数方法调用函数（call、apply）
+            > Title: 在 JavaScript 中, 函数是对象。有它的属性和方法。
+            > Title: call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身
+            > Title: 在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。
+            > Title: 在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。
+> Text: JS对象

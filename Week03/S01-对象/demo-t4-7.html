@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var name = "windowsName";
+
+      // function fn() {
+      //   var name = "Amons";
+      //   innerFunc();
+      //   function innerFunc() {
+      //     console.log(this.name);
+      //   }
+      // }
+
+      // fn();
+
+      var name = "window-Jack";
+      var person = {
+        name: "person-Rose",
+        greeting: function() {
+          console.log("Hi! I'm " + this.name + ".");
+        }
+      };
+      var greeting = person.greeting.bind(person);
+      greeting();
+    </script>
+  </body>
+</html>
