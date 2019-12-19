@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./task2.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="container" id="container">
+      <div class="item greenItem" id="greenItem"></div>
+      <div class="item yellowItem" id="yellowItem"></div>
+    </section>
+
+    <script>
+      var container = document.getElementById("container");
+      var greenItem = document.getElementById("greenItem");
+      var yellowItem = document.getElementById("yellowItem");
+      var dragging;
+      var tLeft, tTop;
+      var containerArea = container.getBoundingClientRect();
+
+      // 拖拽状态
+      // 获取鼠标与方块的相对位置，保证不管点到方块内部的任意一点，都可以
+      // 让方块和鼠标的位移正确
+      document.addEventListener("mousedown", e => {
+        if (e.target === greenItem) {
+          dragging = true;
+          var greenEleRect = greenItem.getBoundingClientRect();
+          tLeft = e.clientX - greenEleRect.left;
+          tTop = e.clientY - greenEleRect.top;
+        }
+      });
+
+      // 取消拖拽状态
+      document.addEventListener("mouseup", e => {
+        dragging = false;
+      });
+
+      // 移动对象
+      document.addEventListener("mousemove", e => {
+        if (dragging) {
+          greenEleRect = greenItem.getBoundingClientRect();
+          yellowEleRect = yellowItem.getBoundingClientRect();
+          greenItem.style.left = e.clientX - tLeft + "px";
+          greenItem.style.top = e.clientY - tTop + "px";
+          switch (true) {
+            // 判断是否在规定范围内移动
+            case greenEleRect.left < containerArea.left:
+              greenItem.style.left = containerArea.left + 2 + "px";
+              dragging = false;
+              break;
+            case greenEleRect.right > containerArea.right:
+              greenItem.style.left = containerArea.right - 100 + "px";
+              dragging = false;
+              break;
+            case greenEleRect.top < containerArea.top:
+              greenItem.style.top = containerArea.top + 2 + "px";
+              dragging = false;
+              break;
+            case greenEleRect.bottom > containerArea.bottom:
+              greenItem.style.top = containerArea.bottom - 100 + "px";
+              dragging = false;
+              break;
+            // 判断是否与黄色块发生碰撞
+            case greenEleRect.top + 80 >= yellowEleRect.top &&
+              greenEleRect.top <= yellowEleRect + 80 &&
+              greenEleRect.left + 80 <= yellowEleRect.left &&
+              greenEleRect.left <= yellowEleRect + 80:
+              yellowItem.style.background = "#0000ff";
+          }
+          // 移动
+        }
+      });
+    </script>
+  </body>
+</html>

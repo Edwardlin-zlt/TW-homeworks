@@ -1,0 +1,2 @@
+myStr = lerom6;
+

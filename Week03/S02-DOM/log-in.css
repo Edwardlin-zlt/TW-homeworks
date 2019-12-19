@@ -1,0 +1,9 @@
+.logIn label{
+  display: block;
+  margin: 5px 0;
+}
+
+.logIn #submitBtn {
+  display: block;
+  margin-top: 10px;
+}

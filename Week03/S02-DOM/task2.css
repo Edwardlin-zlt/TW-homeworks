@@ -1,0 +1,23 @@
+.container {
+  width: 1000px;
+  height: 800px;
+  background-color: #aaa;
+  position: relative;
+}
+
+.item {
+  width: 80px;
+  height: 80px;
+}
+
+.greenItem {
+  background-color: #008116;
+  position: absolute;
+}
+
+.yellowItem {
+  background-color: #f0f13b;
+  position: absolute;
+  top: 40%;
+  left: 70%;
+}
