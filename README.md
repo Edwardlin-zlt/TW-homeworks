@@ -35,3 +35,9 @@ A repo to store my homeworks
 ## Task Week1-06 HTML 大作业
 
 成果链接： <https://edwardlin-zlt.github.io/TW-homeworks/Week01/06_%E9%A1%B9%E7%9B%AE%E5%AE%9E%E8%B7%B5/index.html>
+
+## W3-S2 账号密码验证
+成果链接：<https://edwardlin-zlt.github.io/TW-homeworks/Week03/S02-DOM/log-in.html>
+
+## W3-S2 方块碰撞
+成果链接：<https://edwardlin-zlt.github.io/TW-homeworks/Week03/S02-DOM/task2-v2.html>
