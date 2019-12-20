@@ -63,12 +63,6 @@
               greenItem.style.top = containerArea.bottom - 100 + "px";
               dragging = false;
               break;
-            // 判断是否与黄色块发生碰撞
-            case greenEleRect.top + 80 >= yellowEleRect.top &&
-              greenEleRect.top <= yellowEleRect + 80 &&
-              greenEleRect.left + 80 <= yellowEleRect.left &&
-              greenEleRect.left <= yellowEleRect + 80:
-              yellowItem.style.background = "#0000ff";
           }
           // 移动
         }
