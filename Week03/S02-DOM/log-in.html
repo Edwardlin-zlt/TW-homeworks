@@ -25,17 +25,17 @@
       passwords = {
         "123": "123"
       };
-
       function checkLogIn() {
+        var form = document.getElementsByClassName("logIn")[0];
         var userName = document.getElementById("userName").value;
         var passwd = document.getElementById("passwd").value;
         if (passwords[userName] !== passwd) {
           alert("用户名或密码错误！");
+          form.reset();
         } else {
           alert("登录成功！");
         }
       }
-
       var submitBtn = document.getElementById("submitBtn");
       submitBtn.onclick = checkLogIn;
     </script>
