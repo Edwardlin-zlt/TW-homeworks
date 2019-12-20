@@ -22,10 +22,6 @@ A repo to store my homeworks
 
 ## Task Week1-04-02 移动端网页仿制
 
-### 成果预览:
-
-![0402_mobile_page_mock](./Outcome_preview/0402_mobile_html.png)
-
 成果链接: <https://edwardlin-zlt.github.io/TW-homeworks/Week01/04-02_CSS基础二/mobile.html>
 
 ## Task Week1-05 CSS 基础
