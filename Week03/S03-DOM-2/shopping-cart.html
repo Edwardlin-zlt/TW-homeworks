@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="shopping-cart.css" />
+    <title>Shopping Cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>文具店购物车</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>选择</th>
+            <th>商品名称</th>
+            <th>商品单价(￥)</th>
+            <th>商品数量</th>
+            <th>总价(￥)</th>
+          </tr>
+        </thead>
+        <tbody id="item-rows"></tbody>
+        <tfoot>
+          <td>
+            全选 <input type="checkbox" name="select-all" id="select-all" />
+          </td>
+          <td colspan="4"></td>
+        </tfoot>
+      </table>
+    </div>
+
+    <script src="./shopping-cart.js"></script>
+  </body>
+</html>
