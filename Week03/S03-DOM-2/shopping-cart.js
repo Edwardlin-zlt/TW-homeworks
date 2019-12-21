@@ -1,12 +1,35 @@
-var itemRows = document.getElementById("item-rows");
+function initPage() {
+  loadItems(carProducts);
+
+  updateTotalPrice();
+
+  document.addEventListener("click", e => {
+    switch (true) {
+      case e.target.id === "minus-btn":
+        minusCount(e);
+        break;
+      case e.target.id === "add-btn":
+        addCount(e);
+        break;
+      case e.target.classList[0] === "checkbox":
+        updateTotalPrice();
+        break;
+      case e.target.id === "select-all":
+        console.log("select-all")
+        selectAll();
+        break;
+    }
+  });
+}
 
 function loadItems(itemsInfo) {
   itemsInfo.forEach(itemInfo => {
-    addItemToCart(itemInfo)
+    addItemToCart(itemInfo);
   });
 }
 
 function addItemToCart(itemInfo) {
+  var itemRowsContainer = document.getElementById("item-rows-container");
   var cartRow = document.createElement("tr");
   cartRow.classList.add("item-row");
   cartRow.id = itemInfo.id;
@@ -19,15 +42,70 @@ function addItemToCart(itemInfo) {
     <td class="price">${itemInfo.price}</td> 
     <td class="count"> 
       <input type="button" class="btn" id="minus-btn" value="-"> 
-      <span>${itemInfo.count}</span> 
+      <span class="item-count">${itemInfo.count}</span> 
       <input type="button" class="btn" id="add-btn" value="+"> 
     </td> 
-    <td class="item-total-price">0</td> 
+    <td class="item-total-price">${itemInfo.count * itemInfo.price}</td> 
   `;
   cartRow.innerHTML = cartRowInnerHtml;
-  itemRows.append(cartRow);
+  itemRowsContainer.appendChild(cartRow);
 }
 
+function updateItemTotalPrice(itemRow, itemQuantity) {
+  var itemTotalPriceEle = itemRow.getElementsByClassName("item-total-price")[0];
+  var priceEle = itemRow.getElementsByClassName("price")[0];
+  var price = parseFloat(priceEle.innerHTML);
+  itemTotalPriceEle.innerHTML = price * itemQuantity;
+}
+
+function updateTotalPrice() {
+  var itemRows = document.getElementsByClassName("item-row");
+  var totalPriceEle = document.getElementById("total-price");
+  var selectedItemCount = 0;
+  var totalPrice = 0;
+
+  // 类数组元素不能用forEach方法
+  for (var i = 0; i < itemRows.length; i++) {
+    var element = itemRows[i];
+    if (element.getElementsByClassName("checkbox")[0].checked) {
+      var itemCountEle = element.getElementsByClassName("item-count")[0];
+      selectedItemCount += parseInt(itemCountEle.innerHTML);
+      itemTotalPriceEle = element.getElementsByClassName("item-total-price")[0];
+      itemTotalPrice = parseFloat(itemTotalPriceEle.innerHTML);
+      totalPrice += itemTotalPrice;
+    }
+  }
+  var innerHTML = `共计${selectedItemCount}件商品， ${totalPrice}￥`;
+  totalPriceEle.innerHTML = innerHTML;
+}
+
+function addCount(event) {
+  var itemRow = event.target.parentNode.parentNode;
+  var countEle = event.target.previousElementSibling;
+  var countNum = parseInt(countEle.innerHTML);
+  var newNum = countNum + 1;
+  countEle.innerHTML = newNum;
+  updateItemTotalPrice(itemRow, newNum);
+  updateTotalPrice();
+}
+
+function minusCount(event) {
+  var itemRow = event.target.parentNode.parentNode;
+  var countEle = event.target.nextElementSibling;
+  var countNum = parseInt(countEle.innerHTML);
+  var newNum = countNum < 1 ? 0 : countNum - 1;
+  countEle.innerHTML = newNum;
+  updateItemTotalPrice(itemRow, newNum);
+  updateTotalPrice();
+}
+
+function selectAll() {
+  var itemRows = document.getElementsByClassName("item-row");
+  for (var i = 0; i < itemRows.length; i++) {
+    itemRows[i].getElementsByClassName("checkbox")[0].checked = true;
+  }
+  updateTotalPrice();
+}
 
 var carProducts = [
   {
@@ -74,25 +152,4 @@ var carProducts = [
   }
 ];
 
-loadItems(carProducts);
-
-document.addEventListener("click", e => {
-  switch (true){
-    case (e.target.id === "minus-btn"):
-      // parentNode - 1
-      // make sure number legible
-      // update item-total-price
-      console.log(e.target.parentNode);
-      console.log("minus pressed");
-    case (e.target.id === "add-btn"):
-      // parentNode + 1
-      // make sure number legible
-      // update item-total-price
-      console.log(e.target.parentNode);
-      console.log("minus pressed");
-    case (e.target.classList[0] === "checkbox"):
-      console.log(e.target);
-      // update total price
-  }
-
-})
+initPage();

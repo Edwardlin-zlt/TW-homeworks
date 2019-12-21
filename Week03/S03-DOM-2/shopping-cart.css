@@ -30,6 +30,10 @@
   width: 20px;
 }
 
-.item-row .btn:hover{
+.item-row .btn:hover {
   cursor: pointer;
+}
+
+#total-price {
+  text-align: right;
 }
