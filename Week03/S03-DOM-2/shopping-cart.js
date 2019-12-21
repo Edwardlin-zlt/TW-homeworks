@@ -1,20 +1,29 @@
+var itemRowsContainer = document.getElementById("item-rows-container");
+
 function initPage() {
   loadItems(carProducts);
+  window.itemRows = document.getElementsByClassName("item-row");
+  window.selectAllBtn = document.getElementById("select-all");
   updateTotalPrice();
 
   document.addEventListener("click", e => {
+    var btnClassName = e.target.className;
     switch (true) {
-      case e.target.className.includes("minus-btn"):
-        minusCount(e);
-        break;
-      case e.target.className.includes("add-btn"):
-        addCount(e);
-        break;
-      case e.target.className.includes("checkbox"):
+      case btnClassName.includes("minus-btn"):
+        minusBtnAction(e);
         updateTotalPrice();
         break;
-      case e.target.id === "select-all":
-        toggleSelectAll(e)
+      case btnClassName.includes("add-btn"):
+        addBtnAction(e);
+        updateTotalPrice();
+        break;
+      case btnClassName.includes("checkbox"):
+        ifAllSelected();
+        updateTotalPrice();
+        break;
+      case e.target === selectAllBtn:
+        toggleSelectAll(e);
+        updateTotalPrice();
         break;
     }
   });
@@ -27,7 +36,6 @@ function loadItems(itemsInfo) {
 }
 
 function addItemToCart(itemInfo) {
-  var itemRowsContainer = document.getElementById("item-rows-container");
   var cartRow = document.createElement("tr");
   cartRow.classList.add("item-row");
   cartRow.id = itemInfo.id;
@@ -57,7 +65,6 @@ function updateItemTotalPrice(itemRow, itemQuantity) {
 }
 
 function updateTotalPrice() {
-  var itemRows = document.getElementsByClassName("item-row");
   var totalPriceEle = document.getElementById("total-price");
   var selectedItemCount = 0;
   var totalPrice = 0;
@@ -77,33 +84,41 @@ function updateTotalPrice() {
   totalPriceEle.innerHTML = innerHTML;
 }
 
-function addCount(event) {
+function addBtnAction(event) {
   var itemRow = event.target.parentNode.parentNode;
   var countEle = event.target.previousElementSibling;
   var countNum = parseInt(countEle.innerHTML);
   var newNum = countNum + 1;
   countEle.innerHTML = newNum;
   updateItemTotalPrice(itemRow, newNum);
-  updateTotalPrice();
 }
 
-function minusCount(event) {
+function minusBtnAction(event) {
   var itemRow = event.target.parentNode.parentNode;
   var countEle = event.target.nextElementSibling;
   var countNum = parseInt(countEle.innerHTML);
-  var newNum = countNum < 1 ? 0 : countNum - 1;
+  var newNum = countNum <= 1 ? itemRowsContainer.removeChild(itemRow) : countNum - 1;
   countEle.innerHTML = newNum;
   updateItemTotalPrice(itemRow, newNum);
-  updateTotalPrice();
 }
 
-function toggleSelectAll(event) {
-  var isSelected = event.target.checked;
-  var itemRows = document.getElementsByClassName("item-row");
+
+function toggleSelectAll() {
+  var isSelected = selectAllBtn.checked;
   for (var i = 0; i < itemRows.length; i++) {
     itemRows[i].getElementsByClassName("checkbox")[0].checked = isSelected;
   }
-  updateTotalPrice();
+}
+
+function ifAllSelected() {
+  for (var i = 0; i < itemRows.length; i++) {
+    if (itemRows[i].getElementsByClassName("checkbox")[0].checked === false) {
+      selectAllBtn.checked = false;
+      break;
+    } else {
+      selectAllBtn.checked = true;
+    }
+  }
 }
 
 var carProducts = [
