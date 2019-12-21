@@ -16,7 +16,7 @@ function initPage() {
         break;
       case e.target.id === "select-all":
         console.log("select-all")
-        selectAll();
+        toggleSelectAll(e)
         break;
     }
   });
@@ -99,10 +99,11 @@ function minusCount(event) {
   updateTotalPrice();
 }
 
-function selectAll() {
+function toggleSelectAll(event) {
+  var isSelected = event.target.checked;
   var itemRows = document.getElementsByClassName("item-row");
   for (var i = 0; i < itemRows.length; i++) {
-    itemRows[i].getElementsByClassName("checkbox")[0].checked = true;
+    itemRows[i].getElementsByClassName("checkbox")[0].checked = isSelected;
   }
   updateTotalPrice();
 }
