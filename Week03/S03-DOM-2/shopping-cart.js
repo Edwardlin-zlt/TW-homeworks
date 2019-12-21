@@ -1,21 +1,19 @@
 function initPage() {
   loadItems(carProducts);
-
   updateTotalPrice();
 
   document.addEventListener("click", e => {
     switch (true) {
-      case e.target.id === "minus-btn":
+      case e.target.className.includes("minus-btn"):
         minusCount(e);
         break;
-      case e.target.id === "add-btn":
+      case e.target.className.includes("add-btn"):
         addCount(e);
         break;
-      case e.target.classList[0] === "checkbox":
+      case e.target.className.includes("checkbox"):
         updateTotalPrice();
         break;
       case e.target.id === "select-all":
-        console.log("select-all")
         toggleSelectAll(e)
         break;
     }
@@ -41,9 +39,9 @@ function addItemToCart(itemInfo) {
     <td class="item-name">${itemInfo.name}</td> 
     <td class="price">${itemInfo.price}</td> 
     <td class="count"> 
-      <input type="button" class="btn" id="minus-btn" value="-"> 
+      <input type="button" class="btn minus-btn" value="-"> 
       <span class="item-count">${itemInfo.count}</span> 
-      <input type="button" class="btn" id="add-btn" value="+"> 
+      <input type="button" class="btn add-btn" value="+"> 
     </td> 
     <td class="item-total-price">${itemInfo.count * itemInfo.price}</td> 
   `;
