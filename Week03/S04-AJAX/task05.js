@@ -1,4 +1,4 @@
-var ajax = function(options) {
+var request = function(options) {
   options = {
     url: options.url|| "",
     method: options.method || "GET",
@@ -9,7 +9,7 @@ var ajax = function(options) {
   }
 
   var xhr = new XMLHttpRequest();
-  xhr.open(opts.type, opts.url, true);
+  xhr.open(options.method, options.url, true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -19,5 +19,16 @@ var ajax = function(options) {
       }
     }
   };
-  xhr.send(data);
+  xhr.send(options.data);
 };
+
+var btn = document.getElementById("btn");
+var options = {
+  url: "./somefile.txt",
+  method: "GET",
+  success: function(result){
+    alert(result);
+  },
+}
+
+btn.addEventListener("click", request(options))
