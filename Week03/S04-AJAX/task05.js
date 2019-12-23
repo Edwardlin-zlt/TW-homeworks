@@ -1,12 +1,12 @@
 var request = function(options) {
   options = {
-    url: options.url|| "",
+    url: options.url || "",
     method: options.method || "GET",
     headers: options.headers || {},
     data: options.data || null,
     onSuccess: options.success || function(result) {},
-    onFailure: options.fail || function(error) {},
-  }
+    onFailure: options.fail || function(error) {}
+  };
 
   var xhr = new XMLHttpRequest();
   xhr.open(options.method, options.url, true);
@@ -26,9 +26,9 @@ var btn = document.getElementById("btn");
 var options = {
   url: "./somefile.txt",
   method: "GET",
-  success: function(result){
+  success: function(result) {
     alert(result);
-  },
-}
+  }
+};
 
-btn.addEventListener("click", request(options))
+btn.addEventListener("click", request(options));

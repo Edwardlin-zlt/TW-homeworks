@@ -28,5 +28,5 @@ btn1.addEventListener("click", _ => {
 });
 
 btn2.addEventListener("click", _ => {
-  request.request("script.php", "post", myCallback);
+  request.request("script.php", "post", myCallback, "first=John&last=Smith");
 });

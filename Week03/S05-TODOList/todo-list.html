@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./todo-list.css" />
+    <title>TODOs</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="panel">
+        <h1>TO DO List</h1>
+        <p>Simple Todo List with adding and filter by diff status.</p>
+        <input type="text" name="input" id="input" />
+        <input type="button" value="Add" id="btn-add" />
+        <div id="todo-container">
+          <div class="todo-row">
+            <span>1.</span>
+            <div class="todo-content">
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="todo-1"
+                id="todo-1"
+              />
+              <label for="todo-1">Mission 1</label>
+            </div>
+          </div>
+
+          <div class="todo-row">
+            <span>1.</span>
+            <div class="todo-content">
+              <input
+                type="checkbox"
+                class="checkbox"
+                name="todo-1"
+                id="todo-1"
+              />
+              <label for="todo-1">Mission 1</label>
+            </div>
+          </div>
+        </div>
+        <div class="filters">
+          <span>ALL</span>
+          <span>Active</span>
+          <span>Compare</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
