@@ -97,11 +97,11 @@ function minusBtnAction(event) {
   var itemRow = event.target.parentNode.parentNode;
   var countEle = event.target.nextElementSibling;
   var countNum = parseInt(countEle.innerHTML);
-  var newNum = countNum <= 1 ? itemRowsContainer.removeChild(itemRow) : countNum - 1;
+  var newNum =
+    countNum <= 1 ? itemRowsContainer.removeChild(itemRow) : countNum - 1;
   countEle.innerHTML = newNum;
   updateItemTotalPrice(itemRow, newNum);
 }
-
 
 function toggleSelectAll() {
   var isSelected = selectAllBtn.checked;
