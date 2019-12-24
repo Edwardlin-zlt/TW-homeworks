@@ -87,3 +87,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.filters span:hover {
+  cursor: pointer;
+}
