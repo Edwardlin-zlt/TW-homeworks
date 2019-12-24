@@ -2,17 +2,13 @@
 var state = 0;
 var panel = document.getElementsByClassName("panel")[0];
 var todoContainer = document.getElementById("todo-container");
-var btnAdd = document.getElementById("btn-add");
-var input = document.getElementById("input");
-var filterAll = document.getElementById("all");
-var filterActive = document.getElementById("active");
-var filterComplete = document.getElementById("complete");
 var storage = localStorage;
 var idCounter = localStorage.length;
 
 main();
 
 function main() {
+  updateContainer();
   panel.addEventListener("click", e => {
     switch (true) {
       case e.target.id === "btn-add":
@@ -32,9 +28,13 @@ function main() {
         updateContainer();
         break;
       case e.target.className === "checkbox":
-        // change todoObj checked
+        checkTodo(e.target);
+        updateContainer();
+        break;
       case e.target.className === "delete-todo":
-        // delete todoObj isDeleted true
+        deleteTodo(e.target);
+        updateContainer();
+        break;
     }
   });
 }
@@ -90,9 +90,11 @@ function createTodoRowEle(num, todoObj) {
   var todoRowEle = document.createElement("div");
   todoRowEle.classList.add("todo-row");
   var checkedStr = todoObj.isCompleted ? "checked" : "";
+  var todoCompleted = todoObj.isCompleted ? "todo-complete" : "";
+  var coloredStr = num % 2 == 0 ? "colored" : "";
   var innerHTMLStr = `
-    <span>${num}.</span>
-    <div class="todo-content">
+    <span class="${todoCompleted}">${num}.</span>
+    <div class="todo-content ${coloredStr}">
       <input
         type="checkbox" 
         class="checkbox" 
@@ -100,7 +102,8 @@ function createTodoRowEle(num, todoObj) {
         id="todo-${todoObj.id}" 
         ${checkedStr}
       />
-      <label for="todo-${num}">${todoObj.content}</label>
+      <label for="todo-${todoObj.id}" class="${todoCompleted}">${todoObj.content}</label>
+      <input type="button" id="${todoObj.id}"class="delete-todo" value="&#xe747;">
     </div>
   `;
   todoRowEle.innerHTML = innerHTMLStr;
@@ -135,4 +138,34 @@ function changeState(value) {
   window.state = value;
 }
 
-function checkTodo(todoRowEle) {}
+function checkTodo(checkboxEle) {
+  var currentTodoEle = checkboxEle.parentNode.parentNode;
+  // var numEle = currentTodoEle.getElementsByTagName("span")[0];
+  // var contentEle = currentTodoEle.getElementsByTagName("label")[0];
+  // if (checkboxEle.checked) {
+  //   numEle.classList.add("todo-complete");
+  //   contentEle.classList.add("todo-complete");
+  // } else {
+  //   numEle.classList.delete("todo-complete")
+  //   contentEle.classList.delete("todo-complete");
+  // }
+  var delBtn = currentTodoEle.getElementsByClassName("delete-todo")[0];
+  var todoObjId = parseInt(delBtn.id);
+  var tempObj = JSON.parse(storage.getItem(todoObjId));
+  if (checkboxEle.checked) {
+    tempObj.isCompleted = true;
+  } else {
+    tempObj.isCompleted =false;
+  }
+  storage.setItem(todoObjId, JSON.stringify(tempObj));
+}
+
+function deleteTodo(deleteBtnEle) {
+  var comfirmDel = confirm("Do you really want delete this TODO？");
+  if (comfirmDel) {
+    var todoObjId = parseInt(deleteBtnEle.id);
+    var tempObj = JSON.parse(storage.getItem(todoObjId));
+    tempObj.isDeleted = true;
+    storage.setItem(todoObjId, JSON.stringify(tempObj));
+  }
+}
