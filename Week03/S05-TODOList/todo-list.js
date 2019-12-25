@@ -1,3 +1,5 @@
+// TODO add 后清空input value
+// TODO CSS 阴影
 // state: 0 All | 1 Active | 2 Complete
 var state = 0;
 var panel = document.getElementsByClassName("panel")[0];
@@ -40,7 +42,6 @@ function main() {
 }
 
 function saveItem() {
-  // TODO `String.strip` in JS
   if (input.value) {
     todoData = {
       id: idCounter,
@@ -51,6 +52,7 @@ function saveItem() {
     storage.setItem(idCounter, JSON.stringify(todoData));
     idCounter++;
   }
+  input.value = "";
 }
 
 function updateContainer(params) {

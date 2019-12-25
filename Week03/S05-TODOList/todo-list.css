@@ -34,7 +34,7 @@ body {
   margin-top: 20px;
   padding: 24px;
   border-radius: 10px;
-  box-shadow: 1px 2px 2px black;
+  box-shadow: 0px 0 5px #00000022;
 }
 
 .panel p {
@@ -63,7 +63,7 @@ body {
 }
 
 #todo-container {
-  margin: 40px 0;
+  margin: 20px 0;
 }
 
 .todo-row {
