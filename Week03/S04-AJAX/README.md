@@ -1,17 +1,20 @@
 ## 第一题 总结 Ajax 请求共有多少种回调呢？
 
-AJAX 请求一共有八种回调(Callback)
+一共有八种回调
 
-1. onSuccess
-2. onFailure
-3. onUninitialized
-4. onLoading
-5. onLoaded
-6. onInteractive
-7. onComplete
-8. onException
+最常用的回调 `event handler`
 
-每一个都可以单词含义已经比较清楚了
+  * onreadystatechange
+
+其他七种回调
+
+  * onloadstart 开始取回数据
+  * onprogress 正在传输数据
+  * onabort 放弃取回数据
+  * onerror 取回数据失败
+  * onload 取回数据完成
+  * ontimeout 未能在规定时间内完成取回数据操作
+  * onloadend 整个取回数据流程结束
 
 ## 第二题 编程实现，创建一个名为 ajax 的 XHR 对象.
 
@@ -30,7 +33,7 @@ AJAX 请求一共有八种回调(Callback)
 var ajax = {
   request: function(url, type, callbackFunc, sendData) {
     url = url || "";
-    type = type || "POST";
+    type = type || "post";
     callbackFunc = callbackFunc || function() {};
     sendData = sendData || undefined;
 
@@ -82,6 +85,10 @@ Jsonp 的请求路径后面会自动带上 callback 参数，服务端可据此�
 
 3. 增加如`Nginx`的反向代理，请求并不直接转发到服务器。
 
+4. 使用HTML5中新引进的window.postMessage方法来跨域传送数据
+
+5. 使用跨域资源共享(CORS)进行跨域
+
 ## 第五题 编程实现：有一个方法，可以避免每次请求重复去写创建 XHR 的整个过程，请求方法现只考虑 POST 和 GET，要求默认请求方法是 GET，如下：
 
 ```
@@ -107,7 +114,7 @@ var request = function(options) {
 var request = function(options) {
   options = {
     url: options.url || "",
-    method: options.method || "GET",
+    method: options.method || "get",
     headers: options.headers || {},
     data: options.data || null,
     onSuccess: options.success || function(result) {},

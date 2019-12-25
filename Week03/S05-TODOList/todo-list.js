@@ -1,5 +1,3 @@
-// TODO add 后清空input value
-// TODO CSS 阴影
 // state: 0 All | 1 Active | 2 Complete
 var state = 0;
 var panel = document.getElementsByClassName("panel")[0];
