@@ -17,3 +17,4 @@ A repo to store my homeworks
   * [S2 方块碰撞](https://edwardlin-zlt.github.io/TW-homeworks/Week03/S02-DOM/task2-v2.html)
   * [S3 购物车](https://edwardlin-zlt.github.io/TW-homeworks/Week03/S03-DOM-2/shopping-cart.html)
   * [S5 TodoList](https://edwardlin-zlt.github.io/TW-homeworks/Week03/S05-TODOList/todo-list.html)
+  * [S6 打地鼠](https://edwardlin-zlt.github.io/tw-stage-1-project-3/whack-a-mole/index.html)
