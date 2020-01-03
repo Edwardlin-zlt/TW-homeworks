@@ -1,0 +1,24 @@
+{
+  "name": "tw-homeworks",
+  "version": "1.0.0",
+  "description": "A repo to store my homeworks",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edwardlin-zlt/TW-homeworks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edwardlin-zlt/TW-homeworks/issues"
+  },
+  "homepage": "https://github.com/Edwardlin-zlt/TW-homeworks#readme"
+}
