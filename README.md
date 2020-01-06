@@ -18,3 +18,6 @@ A repo to store my homeworks
   * [S3 购物车](https://edwardlin-zlt.github.io/TW-homeworks/Week03/S03-DOM-2/shopping-cart.html)
   * [S5 TodoList](https://edwardlin-zlt.github.io/TW-homeworks/Week03/S05-TODOList/todo-list.html)
   * [S6 打地鼠](https://edwardlin-zlt.github.io/tw-stage-1-project-3/whack-a-mole/index.html)
+
+## Week04
+  * [S2 JS集合运算合集](https://github.com/Edwardlin-zlt/collection-calculate-camp-2020-1-3-1-57-9-561): 最近实在是太忙了，论文太忙了，作业进度太慢了。
