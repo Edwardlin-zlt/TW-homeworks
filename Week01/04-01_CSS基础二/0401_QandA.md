@@ -2,7 +2,9 @@
 
 CSS代码用IE盒模型解析将会出现偏小的现象。
 
-IE5.5 以前使用的是IE盒模型，其表现为Content的`width`和`height`讲`border`和`padding`计算在了里面。而现在普遍使用的W3C盒模型（IE6以上都使用的W3C盒模型）的`width`和`height`属性不包含`border`和`padding`。而`bix-sizing`允许开发者选择盒模型的解析方式，其中`box-sizing: border-box`就是IE盒模型的，可以避免`border`和`padding`将盒子撑开，即`width`和`height`就是从盒子外面皮开始算的最终大小。
+IE5.5 以前使用的是IE盒模型，其表现为Content的`width`和`height`将`border`和`padding`计算在了里面。而现在普遍使用的W3C盒模型（IE6以上都使用的W3C盒模型）的`width`和`height`属性不包含`border`和`padding`。
+
+而`bix-sizing`允许开发者选择盒模型的解析方式，其中`box-sizing: border-box`就是IE盒模型的，可以避免`border`和`padding`将盒子撑开，即`width`和`height`就是从盒子外面皮开始算的最终大小。
 
 ## 让一个块级元素水平居中的方式有哪些？
 

@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/bin/node /home/edward/.yarn/bin/yarnpkg info coc-json --json
+
+PATH: 
+  /home/edward/.yarn/bin:/home/edward/.config/yarn/global/node_modules/.bin:/home/edward/anaconda3/bin:/usr/lib/jvm/jdk1.8.0_191/bin:/home/edward/.local/bin:/home/edward/anaconda3/condabin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/edward/.fzf/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  12.3.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/edward/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/edward/.yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/edward/.yarn/lib/cli.js:304:30)
+      at /home/edward/.yarn/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "tw-homeworks",
+    "version": "1.0.0",
+    "description": "A repo to store my homeworks",
+    "main": "index.js",
+    "dependencies": {
+      "eslint": "^6.7.2",
+      "prettier": "^1.19.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Edwardlin-zlt/TW-homeworks.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Edwardlin-zlt/TW-homeworks/issues"
+    },
+    "homepage": "https://github.com/Edwardlin-zlt/TW-homeworks#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

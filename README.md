@@ -21,3 +21,9 @@ A repo to store my homeworks
 
 ## Week04
   * [S2 JS集合运算合集](https://github.com/Edwardlin-zlt/collection-calculate-camp-2020-1-3-1-57-9-561): 最近实在是太忙了，论文太忙了，作业进度太慢了。
+
+## Week05
+  * [块级作用域](https://github.com/Edwardlin-zlt/TW-homeworks/tree/master/Week05/S01-ES6-Basic)
+
+## Java-basic
+  * [变量，常量及方法](./java_basic/S3_variable_constant_method/README.md)
