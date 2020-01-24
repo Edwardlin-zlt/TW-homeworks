@@ -7,7 +7,7 @@ aaa, 22aa, Name, name, mingzi, BookTitle, userEmail
 Answer:
 
 ```
-name, BookTitle, userEmail
+name, userEmail
 ```
 
 2.下面那些是有意义的Java常量名？
