@@ -9,10 +9,24 @@ public class Mortgage {
         final byte PERCENTAGE = 100;
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
-        System.out.print("Annual Interest Rate: ");
-        float yearlyInterest = scanner.nextFloat() / PERCENTAGE;
+        int principal;
+        while (true) {
+            System.out.print("Principal: ");
+            principal = scanner.nextInt();
+            if (principal>1000 && principal <= 1_000_000){
+                break;
+            }
+            System.out.println("Principal should more than 1000 and less or equal to 1,000,000");
+        }
+        float yearlyInterest;
+        while (true){
+            System.out.print("Annual Interest Rate: ");
+            yearlyInterest = scanner.nextFloat() / PERCENTAGE;
+            if (yearlyInterest>0 && yearlyInterest <=0.3) {
+                break;
+            }
+            System.out.println("Interest rate should be more than 0 and less or equal to 30%");
+        }
         float monthlyInterest =  yearlyInterest / MONTHS_IN_YEAR;
         System.out.print("Periods(years): ");
         byte years = scanner.nextByte();
