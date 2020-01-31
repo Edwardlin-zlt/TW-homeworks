@@ -32,6 +32,8 @@ Out:
 77
 ```
 
+* `result`为`77`的原因：`--`拥有该式中最高优先级，先运行第一个`b--`，因为是后`--`使得第一个`b--`在本式运算中仍然为`5`,再进行自减运算;但第二个`b--`中的`b`在进行`--`运算之前已经因为前一个`b--`变成了`4`,还是因为是后`--`，使得的二个`b--`在本式运算中值为`4`,再进行自减。故`result = 5 × 12 + 5 + 3 × 4 = 77`
+
 
 ## 3.考虑以下代码片段：
 
@@ -72,3 +74,13 @@ Answer:
 打印第二个`6`时，后`++`，先用后加，先打印现在的`i`值，在进行自增运算，所以最后一行`i`值为`7`
 
 ## 5. 写一个程序判断一个浮点数是否为0（不能用 == 0 直接判断哦 ）
+
+```
+public class JudgeFloatEqualZero {
+    public static void main(String[] args) {
+        float fNum = 0.0F;
+        boolean isEqualToZero = fNum < 1e-6;
+        System.out.println(isEqualToZero);
+    }
+}
+```
