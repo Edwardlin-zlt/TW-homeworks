@@ -28,4 +28,5 @@ A repo to store my homeworks
 ## Java-basic
   * [变量，常量及方法](./java_basic/S3_variable_constant_method/README.md)
   * [Java 数据类型](./java_basic/src/S4_Java_data_type)
-  * [Java 操作符](java_basic/src/S5_operator/README.md)
+  * [Java 运算符](java_basic/src/S5_operator/README.md)
+  * [Java 常用语句](java_basic/src/S6_Statements/README.md)
