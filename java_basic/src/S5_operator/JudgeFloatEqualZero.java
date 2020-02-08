@@ -1,9 +1,15 @@
 package S5_operator;
 
+import java.util.Scanner;
+
 public class JudgeFloatEqualZero {
     public static void main(String[] args) {
-        float fNum = 0.0F;
-        boolean isEqualToZero = fNum < 1e-6;
-        System.out.println(isEqualToZero);
+        Scanner scanner = new Scanner(System.in);
+        float fNum = scanner.nextFloat();
+        System.out.println(judgeFloatEqualZero(fNum));
+    }
+
+    public static boolean judgeFloatEqualZero(float num) {
+        return Math.abs(num) < 1e-6;
     }
 }

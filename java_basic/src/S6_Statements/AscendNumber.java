@@ -33,6 +33,6 @@ public class AscendNumber {
                 meddle = num3;
             }
         }
-        System.out.println("Max: " + max + "\nMeddle: " + meddle + "\nMin: " + min);
+        System.out.println("Min: " + min + "\nMeddle: " + meddle + "\nMax: " + max);
     }
 }
