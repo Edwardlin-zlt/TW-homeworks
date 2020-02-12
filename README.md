@@ -30,3 +30,10 @@ A repo to store my homeworks
   * [Java 数据类型](./java_basic/src/S4_Java_data_type)
   * [Java 运算符](java_basic/src/S5_operator/README.md)
   * [Java 常用语句](java_basic/src/S6_Statements/README.md)
+  * [Java Array](https://github.com/Edwardlin-zlt/java_practice_basic-2020-2-3-7-29-35-742.git)
+  * [黄焖鸡（使用Java基础知识实现）](https://github.com/Edwardlin-zlt/java_practice_basic-2020-2-5-2-55-29-60.git)
+
+## OOP-Basic
+  * [类和对象](https://github.com/Edwardlin-zlt/java_practice_basic-2020-2-5-3-55-38-589.git)
+  * [继承](https://github.com/Edwardlin-zlt/java_practice_basic-2020-2-6-15-0-55-490.git)
+  * [多态](https://github.com/Edwardlin-zlt/java_practice_basic-2020-2-8-16-37-51-327.git)
